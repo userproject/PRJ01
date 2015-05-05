@@ -12,6 +12,7 @@ function setScreen() {
 function setheader() {
 	var head_h = $('#header').height();
 	var head_menu_h = $('.menu').height();
+	$('#content').css({'padding-top': head_h+'px'});
 	$('.h_menu').css({'top': head_h+'px'});
 	$('.s_menu').css({'top': head_h+'px', 'display':'none'});
 	
