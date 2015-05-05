@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	position:relative;
+}
+
+.clear {
+	clear:both;
+}
+.left {
+	float:left;	
+}
+.right {
+	float:right;	
+}
+
+.resize {
+	width:100%;
+	height:auto;
+}
+
+.hide_on_mb {
+	display:block;
+}
+.show_on_mb {
+	display:none;
+}
+
+@media all and (max-width: 980px) {
+	
+}
+
+@media all and (max-width: 790px) {
+
+	.hide_on_mb {
+		display:none;
+	}
+	.show_on_mb {
+		display:block;
+	}
+	
+}
+
+/*-----------------------------------HEADER-------------------------------------*/
+
+#header {
+	position:relative;
+	z-index:100;
+	background:rgba(0, 0, 0, 0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000); 
+    zoom: 1;
+}
+.h_con {
+	position:relative;
+	max-width:980px;
+	min-width:980px;
+	width:100%;
+	margin:0 auto;
+	clear: both;
+}
+.h_logo {
+	max-width:250px;
+	width:25%;
+	float:right;
+	margin-right:0.75%;
+	padding:16px 0 12px 0;
+}
+.logo span {
+	display:none;	
+}
+.h_menu {
+	position:static;
+	background:none;
+	display:block;
+	max-width:670px;
+	width:73.5%;
+	height:auto;
+	float:left;
+}
+.logo {
+	float:left;
+	width:20px;
+	margin:0 3% 0 1.25%;
+	line-height:52px;
+	border:none;
+	padding:16px 0 12px 0;
+}
+.menu {
+	background:none;
+	float:left;
+	margin-right:2.75%;
+	border:none;
+	padding:16px 0 12px 0;
+}
+.menu:hover {
+	background:url(../images/share/img/bg-menu.png) repeat-x top left;
+}
+.menu:hover a.cat_menu  {
+	color:#FFE993;
+}
+.menu a {
+	display:block;
+	font-size:25px;
+	color:#FFF;
+	line-height:52px;
+	text-align:left;
+	text-decoration:none;
+	padding:0;
+}
+.menu a:hover {
+	color:#FFE993;
+}
+.s_menu {
+	display:none;
+	position:fixed;
+	width:100%;
+	left:0;
+	background:rgba(0, 0, 0, 0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000); 
+    zoom: 1;
+	padding:0 0 23px 0;
+}
+.s_menu a {
+	display:block;
+	font-size:25px;
+	color:#FFF;
+	line-height:32px;
+	text-align:left;
+	text-decoration:none;
+	padding:0;
+}
+.s_con {
+	display:inline-block;
+	margin-top:-10px;
+}
+
+
+/*-----------------------------------FOOTER-------------------------------------*/
+
+
+#footer {
+	position:relative;
+	z-index:100;
+}
+.foot_wrap {
+	position:relative;
+	max-width:980px;
+	min-width:980px;
+	width:100%;
+	margin:0 auto;
+	clear: both;
+}
+.foot_con {
+	float: right;
+}
+.copy_txt {
+	float: left;
+	color:#666;
+	font-size: 11px;
+	line-height: 20px;
+}
+.soc_blck {
+	float: left;
+}
+
+
+@media all and (max-width: 980px) {
+	.h_con {
+		max-width:100%;
+		min-width:0;
+	}
+	.menu a {
+		font-size:23px;
+	}
+	
+	.foot_wrap {
+		max-width:100%;
+		min-width:0;
+	}
+}
+
+@media all and (max-width: 790px) {
+	
+	/*-----------------------------------HEADER-------------------------------------*/
+	
+	.h_logo {
+	  width:39.625%;
+	  float:left;
+	  margin:0 0 0 2%;
+	}
+	.h_btn {
+		max-width:45px;
+		min-width:20px;
+		width:7.03%;
+		float:right;
+	  	margin:3px 2% 0 0;
+		padding:16px 0 12px 0;
+	}
+	
+	.h_menu {
+		position:fixed;
+		background:#300D0A;
+		display:none;
+		max-width:100%;
+		width:100%;
+		height:100%;
+		float:left;
+	}	
+	.logo {
+		float:none;
+		width:100%;
+		margin:0;
+		line-height:1em;
+		padding:15px 0;
+		text-align:center;
+		border-bottom:solid 1px #260A08;
+	}
+	.logo img {
+		width:26px;
+	}
+	.logo a {
+		display:block;
+		font-size:28px;
+		color:#FFF;
+		text-decoration:none;
+		line-height:1em;
+	}
+	.logo span {
+		display:inline-block;	
+	}
+	.menu {
+		float:none;
+		margin:0;
+		padding:0;
+		border-bottom:solid 1px #260A08;
+	}
+	.menu:hover {
+		background:none;
+	}
+	.menu a {
+		display:block;
+		font-size:28px;
+		color:#FFF;
+		line-height:34px;
+		text-align:center;
+		text-decoration:none;
+		padding:15px 0 17px 0;
+	}
+	.menu a:hover {
+		color:#FFF;
+	}
+	.menu:hover a.cat_menu  {
+		color:#FFF;
+	}
+	.s_menu {
+		display:none;
+		position:static;
+		padding:0;
+	}
+	.s_menu a {
+		font-size:26px;
+		line-height:34px;
+		padding:0;
+	}
+	.s_con {
+	  display:block;
+	  margin-top:0;
+	  padding:10px 0;
+	}
+	
+	
+	/*-----------------------------------FOOTER-------------------------------------*/
+	
+	#footer {
+		position: relative;
+		margin: 0 0 0 0;
+		z-index: 3;
+	}
+	.foot_con {
+		float: none;
+		text-align: center;
+	}
+	.copy_txt {
+		float: none;
+		font-size: 11px;
+		line-height: 40px;
+		padding-right: 0.93%;
+	}
+	.soc_blck {
+		float: none;
+		width:215px;
+		margin:0 auto;
+		line-height: 40px;
+	}
+}
