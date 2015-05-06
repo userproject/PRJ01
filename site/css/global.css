@@ -82,7 +82,7 @@ body {
 .logo {
 	float:left;
 	width:20px;
-	margin:0 3% 0 1.25%;
+	margin:0 2.75% 0 1.25%;
 	line-height:52px;
 	border:none;
 	padding:16px 0 12px 0;
@@ -156,6 +156,7 @@ body {
 }
 .foot_con {
 	float: right;
+	padding-right:20px;
 }
 .copy_txt {
 	float: left;
@@ -174,7 +175,7 @@ body {
 		min-width:0;
 	}
 	.menu a {
-		font-size:23px;
+		font-size:22px;
 	}
 	
 	.foot_wrap {
@@ -279,10 +280,12 @@ body {
 		position: relative;
 		margin: 0 0 0 0;
 		z-index: 3;
+		background:#000;
 	}
 	.foot_con {
 		float: none;
 		text-align: center;
+		padding-right:0;
 	}
 	.copy_txt {
 		float: none;
