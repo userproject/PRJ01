@@ -1,0 +1,66 @@
+/* CSS Document */
+#productHead{
+	color:#FFFFFF;
+	text-align:center;
+}
+#productHead h1{
+	font-size:50px;
+}
+
+#productHead h2{
+	font-size:40px;
+}
+
+#productHeadDtl{
+	font-size:25px;
+	padding:10px 0 10px 0;
+	max-width:450px;
+	margin:0 auto;
+}
+#howtoBtn{
+	color:#D0AC66;
+}
+#productShow:after{
+	clear:both;
+	content:'';
+	display:block;
+	
+}
+#productShow{
+	width:930px;
+	margin:0 auto;
+	padding-top:25px;
+}
+.productItem{
+	width:240px;
+	float:left;
+	text-align:center;
+}
+#product1,#product2{
+	width:81px;
+	margin:0 auto;
+}
+#product3{
+	width:222px;
+	margin:0 auto;
+	padding:192px 0 0 0;
+}
+.detailBtn{
+	width:201px;
+	margin:0 auto;	
+}
+.itemcenter{
+	margin:0 105px 0 105px;
+}
+.productTitle{
+	color:#FFFFFE;
+	font-size:30px;
+}
+.productDetail{
+	color:#D0AC66;
+	font-size:22px;
+}
+.productTxt{
+	min-height:110px;
+	padding-bottom:10px;
+}

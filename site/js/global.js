@@ -12,6 +12,7 @@ function setScreen() {
 function setheader() {
 	var head_h = $('#header').height();
 	var head_menu_h = $('.menu').height();
+	
 	$('#content').css({'padding-top': head_h+'px'});
 	$('.h_menu').css({'top': head_h+'px'});
 	$('.s_menu').css({'top': head_h+'px', 'display':'none'});
@@ -81,9 +82,11 @@ function submenu(num) {
 // -------------------------------------------------------//
 
 $(window).load(function(e) {
-    setScreen();
-	setheader();
-	
+	setTimeout(function() {
+		setScreen();
+		setheader();
+	}, 100);
+    
 	$('.sh_sub').hover(
 		function() { 
 			if($(window).width() > 790) {
@@ -94,10 +97,7 @@ $(window).load(function(e) {
 				$(this).find('.s_menu').stop().slideUp(250);
 			}
 		}
-	);
-	
-	
-	
+	);	
 });
 
 $(window).resize(function(e) {
