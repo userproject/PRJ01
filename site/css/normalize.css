@@ -46,6 +46,10 @@ table {
 	border-spacing: 0;
 }
 div {
+<<<<<<< HEAD
 	white-space:normal;
 	word-wrap:normal;
+=======
+	word-break:break-all;	
+>>>>>>> parent of ccf0427... Revert "Site"
 }
