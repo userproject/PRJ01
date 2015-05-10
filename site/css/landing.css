@@ -2,13 +2,13 @@
 /* CSS Document */
 
 #content {
+	position:relative;
 	background:url(../images/landing/img/bg1.jpg) no-repeat #000 top center;
 }
 
 #landing {
 	position:relative;
 	max-width:980px;
-	min-width:980px;
 	width:100%;
 	margin:0 auto;
 	clear: both;
@@ -17,7 +17,7 @@
 }
 
 .contain1 {
-	padding:120px 7% 105px 0;	
+	margin:120px 7% 105px 0;	
 }
 .contain1 .prd_info {
 	float:right;
@@ -179,7 +179,7 @@
 	font-family: 'psl_kanda_probold';
 }
 
-@media all and (max-width: 980px) {
+@media screen and (max-width: 980px) {
 	#landing {
 		max-width:100%;
 		min-width:0;
@@ -190,7 +190,7 @@
 	}
 }
 
-@media all and (max-width: 790px) {
+@media screen and (max-width: 790px) {
 	#content {
 		background:url(../images/landing/img/m-bg1.jpg) no-repeat #000 top center;
 		background-size: contain;
@@ -264,14 +264,14 @@
 	}
 }
 
-@media all and (max-width: 640px) {
+@media screen and (max-width: 640px) {
 	.contain1 .ttl {
 		font-size: 40px;
 		line-height: 40px;
 	}
 }
 
-@media all and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 	.contain1 .ttl {
 		font-size: 30px;
 		line-height: 30px;

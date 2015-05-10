@@ -1,6 +1,8 @@
 // JavaScript Document
 var window_height = 0;
 var window_width = 0;
+var head_h = 0;
+var head_menu_h = 0;
 
 function setScreen() {
 	if($(window).width() != window_width || window_width == 0) {
@@ -10,14 +12,15 @@ function setScreen() {
 }
 
 function setheader() {
-	var head_h = $('#header').height();
-	var head_menu_h = $('.menu').height();
+	head_h = $('#header').height();
+	head_menu_h = $('.menu').height();
 	
 	$('#content').css({'padding-top': head_h+'px'});
 	$('.h_menu').css({'top': head_h+'px'});
-	$('.s_menu').css({'top': head_h+'px', 'display':'none'});
+	$('.s_menu').css({'top': head_h+'px'});
 	
 	var btnsrc = $('.h_btn').find('img').attr('src');
+	
 	if($(window).width() > 790) {
 		$('.h_menu').show();
 		menuFlag = false;
@@ -73,31 +76,41 @@ function headmenu() {
 function submenu(num) {
 	var subFlg = $('.s_menu').eq(num).css('display');
 	
-	if(subFlg == 'block') {
-		$('.s_menu').eq(num).stop().slideUp(250);
-	} else if(subFlg == 'none') {
-		$('.s_menu').eq(num).stop().slideDown(250);
+	if($(window).width() < 790) {
+		if(subFlg == 'block') {
+			$('.s_menu').eq(num).stop().slideUp(250);
+		} else if(subFlg == 'none') {
+			$('.s_menu').eq(num).stop().slideDown(250);
+		}
 	}
 }
 // -------------------------------------------------------//
 
-$(window).load(function(e) {
+$(document).ready(function(e) {
 	setTimeout(function() {
 		setScreen();
 		setheader();
 	}, 100);
     
+	var s_menu_H = 0;
+	var headH = 0;
 	$('.sh_sub').hover(
 		function() { 
+			s_menu_H = $(this).find('.s_menu').height() + 23;
+			
 			if($(window).width() > 790) {
-				$(this).find('.s_menu').stop().slideDown(250);
+				$('#header').stop().animate({'height':head_h + s_menu_H + 'px'}, 250);
+				$(this).find('.s_menu').stop().slideDown(300);
 			}
 		}, function() { 
 			if($(window).width() > 790) {
-				$(this).find('.s_menu').stop().slideUp(250);
+				$('#header').stop().animate({'height':head_h+'px'}, 250);
+				$(this).find('.s_menu').stop().slideUp(300);
 			}
 		}
 	);	
+	
+	
 });
 
 $(window).resize(function(e) {

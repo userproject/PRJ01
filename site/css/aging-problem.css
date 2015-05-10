@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+	position:relative;
+	background:url(../images/againg-problem/img/aging-problem.jpg) no-repeat #000 top center;
+}
+#aging_problem {
+	position:relative;
+	width:100%;
+	clear: both;
+	overflow:hidden;
+	padding-bottom:30px;
+	font-family: 'psl_kanda_probold';
+}
+
+.contain1 {
+	padding-top:30px;	
+	text-align:center;
+	color:#FFF;
+}
+.contain1 .con_wrap {
+	max-width:980px;
+	margin:0 auto;
+}
+.contain1 .ttl {
+	font-size:50px;
+	line-height:1.2em;
+}
+.contain1 .txt_ttl1 {
+	font-size:40px;
+	line-height:1.2em;
+}
+.contain1 .txt_desc1 {
+	max-width:660px;
+	margin:0 auto;
+	font-size:25px;
+	line-height:1em;
+}
+.contain1 .txt_ttl2 {
+	font-size:40px;
+	line-height:1.2em;
+	padding-top:20px;
+}
+.contain1 .txt_desc2 {
+	max-width:590px;
+	margin:0 auto;
+	font-size:25px;
+	line-height:1em;
+}
+
+.contain2 {
+	padding-top:25px;
+	color:#FFF;
+	text-align:center;
+	background:url(../images/againg-problem/img/bg1.png) repeat-x bottom left;
+}
+.contain2 .con_wrap {
+	max-width:725px;
+	margin:0 auto;
+}
+.contain2 .blck1 {
+	float:left;
+	width:27.17%;
+	margin-right:6.06%;	
+}
+.contain2 .blck1 .img {
+	max-width:197px;
+}
+.contain2 .blck1 .txt1 {
+	font-size:25px;
+}
+.contain2 .blck1 .txt2 {
+	font-size:50px;
+}
+
+.contain2 .blck2 {
+	float:left;
+	width:33.51%;
+	margin-right:6.06%;	
+}
+.contain2 .blck2 .img {
+	width:81.06%;
+	max-width:197px;
+	margin:0 auto;	
+}
+.contain2 .blck2 .txt {
+	font-size:25px;
+}
+.contain2 .blck3 {
+	float:left;
+	width:27.17%;	
+}
+.contain2 .blck3 .img {
+	max-width:197px;
+}
+.contain2 .blck3 .txt {
+	font-size:25px;
+}
+.contain2 .blck_txt {
+	padding:35px 0 40px 0;
+	font-size:25px;
+	max-width:676px;
+	margin:0 auto;	
+}
+
+.contain3 {
+	background:url(../images/againg-problem/img/bg2.jpg) no-repeat top center;
+	background-size:cover;
+	padding:110px 0 100px 0;
+}
+.contain3 .con_wrap {
+	max-width:906px;
+	margin:0 auto;
+}
+.contain3 .blck1 {
+	background:url(../images/againg-problem/img/bg3.png) no-repeat top center;
+	background-size:contain;
+	float:right;
+	width:53%;
+	margin:0 3.75% 0 0;
+}
+.contain3 .blck1 .txt1 {
+	font-size:40px;
+	color:#000;
+	text-align:center;
+	padding:8px 11.45% 8px 11.45%;
+}
+.contain3 .blck1 .sp_txt {
+	font-size:50px;
+	color:#8C0000;
+}
+.contain3 .blck2 {
+	float:right;
+	width:62.3%;
+	padding-top:43px;
+	font-size:25px;
+	text-align:center;
+}
+
+.contain3 .btn1 {
+	width:286px;
+	height:38px;
+	margin:25px auto 0 auto;
+	line-height:38px;
+	background:#552021;
+	border-left:solid 2px #2E090A;
+	border-right:solid 2px #552021;
+	border-bottom:solid 2px #2E090A;
+}
+.contain3 .btn1:hover {
+	background:#461112;
+	border-left:solid 2px #2C0909;
+	border-right:solid 2px #461112;
+	border-bottom:solid 2px #2C0909;
+}
+.contain3 .btn1 a {
+	display:block;
+	color:#FFF;
+	font-size:25px;
+	font-family: 'psl_kanda_probold';
+	text-decoration:none;
+	text-align:center;
+}
+@media screen and (max-width: 980px) {
+	#landing {
+		max-width:100%;
+		min-width:0;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.contain1 .txt_desc1 {
+		max-width: 100%;
+		padding:0 5%;
+	}
+	.contain1 .txt_desc2 {
+		max-width: 100%;
+		margin: 0 auto;
+		padding:0 5%;
+	}
+	
+	.contain2 {
+		background:none;
+	}
+	.contain2 .blck1 {
+		float: none;
+		width:90%;
+		margin:0 auto;
+	}
+	.contain2 .blck1 .img {
+		max-width: 253px;
+		width:40%;
+		margin:0 auto;
+	}
+	.contain2 .blck2 {
+		float: none;
+		width:90%;
+		margin:0 auto;
+		padding-top:10px;
+	}
+	.contain2 .blck2 .img {
+		max-width: 253px;
+		width:40%;
+		margin:0 auto;
+	}
+	.contain2 .blck3 {
+		float: none;
+		width:90%;
+		margin:0 auto;
+		padding-top:10px;
+	}
+	.contain2 .blck3 .img {
+		max-width: 253px;
+		width:40%;
+		margin:0 auto;
+	}
+	.contain2 .blck_txt {
+		padding:0;
+		max-width:100%;
+		width:90%;
+		margin:0 auto;
+	}
+	
+	.contain3 {
+		background:url(../images/againg-problem/img/m-bg2.jpg) no-repeat top center;
+		background-size:cover;
+		padding:0;
+		margin-top:15px;
+	}
+	.contain3 .con_wrap {
+		max-width:100%;
+		margin:0 auto;
+	}
+	.contain3 .blck1 {
+		background: url(../images/againg-problem/img/m-bg3.png) no-repeat top center;
+		background-size:contain;
+		float: none;
+		width:90%;
+		margin: 0 auto;
+	}
+	.contain3 .blck1 .txt1 {
+		font-size: 28px;
+		padding: 17px 6% 10px 6%;
+	}
+	.contain3 .blck1 .sp_txt {
+		font-size: 36px;
+	}
+	.contain3 .blck2 {
+		float:none;
+		width:100%;
+		padding:15px 0 30px 0;
+		margin:0 auto;
+	}
+	.contain3 .blck2 .txt {
+		padding:0 5%;
+	}
+	.contain3 .blck2 .btn1 {
+		width: 286px;
+		height: 38px;
+		margin: 15px auto 0 auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.contain3 .blck1 .txt1 {
+		font-size: 26px;
+	}
+	.contain3 .blck1 .sp_txt {
+		font-size:32px;
+	}
+	
+}

@@ -6,22 +6,22 @@
 <title>index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link rel="stylesheet" type="text/css" href="css/font.css">
-<link rel="stylesheet" type="text/css" href="css/global.css">
-<link rel="stylesheet" type="text/css" href="css/landing.css">
+<link rel="stylesheet" type="text/css" href="css/font.css" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/landing.css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/global.js"></script>
 <script type="text/javascript">
-$(window).load(function(e) {
+$(document).ready(function(e) {
 	setFade();
     setBullet();
-	if(itmCount == 0) {setFadeTimer();}
+	//if(itmCount > 0) {setFadeTimer();}
 });
 
 $(window).resize(function(e) {
 	setFade();
     setBullet();
-	setFadeTimer();
+	//setFadeTimer();
 });
 
 function setFade() {
@@ -81,6 +81,7 @@ function setFadeTimer() {
 </script>
 </head>
 <body>
+
 <!---------------------------------------------------------------->
 
 <div id="header">
@@ -115,11 +116,10 @@ function setFadeTimer() {
     <div class="clear"></div>
   </div>
 </div>
-<div class="h_space"></div>
 
 <!---------------------------------------------------------------->
-
 <div id="content">
+
   <div id="landing">
     <div class="contain1">
       <div class="show_on_mb"><img src="images/landing/img/m-bg1-space.png" class="resize" /></div>
@@ -174,8 +174,8 @@ function setFadeTimer() {
       <div class="clear"></div>
     </div>
   </div>
-</div>
 
+</div>
 <!---------------------------------------------------------------->
 
 <div id="footer">
@@ -199,5 +199,6 @@ function setFadeTimer() {
 </div>
 
 <!---------------------------------------------------------------->
+
 </body>
 </html>

@@ -27,11 +27,11 @@ body {
 	display:none;
 }
 
-@media all and (max-width: 980px) {
+@media screen and (max-width: 980px) {
 	
 }
 
-@media all and (max-width: 790px) {
+@media screen and (max-width: 790px) {
 
 	.hide_on_mb {
 		display:none;
@@ -46,19 +46,20 @@ body {
 
 #header {
 	position:absolute;
-	z-index:100;
 	width:100%;
 	background:rgba(0, 0, 0, 0.5);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000); 
     zoom: 1;
+	z-index:100;
+	overflow:hidden;
 }
 .h_con {
 	position:relative;
 	max-width:980px;
-	min-width:980px;
 	width:100%;
 	margin:0 auto;
 	clear: both;
+	z-index:100;
 }
 .h_logo {
 	max-width:250px;
@@ -117,10 +118,9 @@ body {
 	position:fixed;
 	width:100%;
 	left:0;
-	background:rgba(0, 0, 0, 0.5);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000); 
     zoom: 1;
 	padding:0 0 23px 0;
+	z-index:100;
 }
 .s_menu a {
 	display:block;
@@ -149,7 +149,6 @@ body {
 .foot_wrap {
 	position:relative;
 	max-width:980px;
-	min-width:980px;
 	width:100%;
 	margin:0 auto;
 	clear: both;
@@ -169,7 +168,7 @@ body {
 }
 
 
-@media all and (max-width: 980px) {
+@media screen and (max-width: 980px) {
 	.h_con {
 		max-width:100%;
 		min-width:0;
@@ -184,7 +183,7 @@ body {
 	}
 }
 
-@media all and (max-width: 790px) {
+@media screen and (max-width: 790px) {
 	
 	/*-----------------------------------HEADER-------------------------------------*/
 	
