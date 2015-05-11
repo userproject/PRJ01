@@ -12,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.carousel.css"/>
 <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.theme.css"/>
 <script src="js/jquery-1.9.1.js"></script>
-<script src="js/owl-carousel/owl.carousel.min.js"></script>
 <script src="js/global.js"></script>
+<script src="js/owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript">
 function MM_swapImgRestore() { //v3.0
   var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
@@ -37,13 +37,23 @@ function MM_swapImage() { //v3.0
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
 
+var divhtml = "";
 var owl;
 $(document).ready(function() {
+	divhtml = $(".owl-product").html();
 	owl =$('#owl-product');
+
+	
+	/*
+	owl.on('changed.owl.carousel', function(event) {
+
+			$("#content").css({'max-height':$("#productOwl"+event.page.index).height()+150});
+	});
+*/
+ 
 });
 
 $(window).resize(function(){
-	if(isIE()>8){
 	var container = $("#owl-product");
 if (container.hasClass("owl-carousel")) {
     container.owlCarousel({
@@ -56,11 +66,10 @@ if (container.hasClass("owl-carousel")) {
     container.removeData();
 	initOwl();
 }
-	}
 });
 
 function initOwl(){
-	  owl.owlCarousel({
+	 	owl.owlCarousel({
       navigation : false, // Show next and prev buttons
       items:1,
 	  center:true,
@@ -72,11 +81,20 @@ function initOwl(){
 }
 
 $(window).load(function(){
-	//var spch = 0;
-	initOwl();
+initOwl();
 
-	owl.trigger('to.owl.carousel', 0);
+	if(window.location.hash) {
+		var hashtxt = window.location.hash.replace('#','');
+		if(hashtxt=="lifting-eye"){
+			owl.trigger('to.owl.carousel', 0);
+		}else if(hashtxt=="lifting-essense"){
+			owl.trigger('to.owl.carousel', 1);
+		}else if(hashtxt=="lifting-cream"){
+			owl.trigger('to.owl.carousel', 2);
+		}
+	}
 
+  
 	$(".backSlide").click(function () {
 		owl.trigger('prev.owl.carousel');
 	});
@@ -84,14 +102,7 @@ $(window).load(function(){
 	$(".nextSlide").click(function () {
 		owl.trigger('next.owl.carousel');
 	});
-	
-	
 });
-
-function isIE () {
-  var myNav = navigator.userAgent.toLowerCase();
-  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
-}
 
 </script>
 </head>
@@ -245,7 +256,7 @@ function isIE () {
             </tr>
         </table>
     </div>
-    <div class="befHead kanda_bold">ส่วนผสมทางประสิทธิภาพ</div>
+    <div class="befHead kanda_bold hide_on_mb">ส่วนผสมทางประสิทธิภาพ</div>
     <div class="befTable befItem kanda_bold hide_on_mb">
     	<table>
         	<tr class="tdbg1">
@@ -274,58 +285,6 @@ function isIE () {
                 <td>ส่วนผสมอนุภาคขนาดเล็กที่ช่วยเรื่องความกระชับจากเมล็ดทานตะวัน บาร์เลย์</td>
             </tr>
         </table>
-    </div>
-    <div class="befTableMb kanda_bold">
-    <table>
-    	<tr>
-        	<td style="width:30%" class="mbbg1">ปัญหา</td>
-            <td class="mbbg3">ถุงใต้ตาหย่อนคล้อย</td>
-        </tr>
-        <tr>
-        	<td class="mbbg2">สาเหตุ</td>
-            <td class="mbbg3">เนื้อเยื่อที่รองรับถุงไขมันอยู่เกิดหย่อนยานลงตามกาลเวลาในวัยที่เพิ่มขึ้น</td>
-        </tr>
-        <tr>
-        	<td class="mbbg1">เทคโนโลยี</td>
-            <td class="mbbg3"><ul><li>สารสกัดเข้มข้นจากเรด คาเวียร์</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
-        </tr>
-        <tr>
-        	<td class="mbbg2">ปัญหา</td>
-            <td class="mbbg3">รอยหมองคล้ำใต้ตา</td>
-        </tr>
-        <tr>
-        	<td class="mbbg1" >สาเหตุ</td>
-            <td class="mbbg3">อาการตาแห้ง รวมทั้งแพ้สารเคมีต่างๆทำให้คันจนต้องถูขยี้ตา</td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >เทคโนโลยี</td>
-            <td class="mbbg3"><ul><li>สารสกัดจากผลซิลเวอร์ไวน์</li><li>โสมวินเทอร์เชอร์รี่</li><li>มอยส์เจอไรเซอร์</li></ul></td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >ปัญหา</td>
-            <td class="mbbg3">ริ้วรอยรอบดวงตา</td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >สาเหตุ</td>
-            <td class="mbbg3">การเสื่อมของเนื้อเยื่อเกี่ยวพันใต้ผิวหนัง พวกคอลลาเจน และอิลาสติน</td>
-        </tr>
-       <tr>
-        	<td class="mbbg2" >เทคโนโลยี</td>
-            <td class="mbbg3"><ul><li>สารสกัดเข้มข้นจากเรด</li><li>คาเวียร์</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >ปัญหา</td>
-            <td class="mbbg3">ตาลึก</td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >สาเหตุ</td>
-            <td class="mbbg3">เกิดจากผิวหนังและไขมันใต้ชั้นกล้ามเนื้อตา ที่บางลงทำให้ ร่องนี้เด่นชัดขึ้น</td>
-        </tr>
-        <tr>
-        	<td class="mbbg2" >เทคโนโลยี</td>
-            <td class="mbbg3">ส่วนผสมอนุภาคขนาดเล็กที่ช่วยเรื่องความกระชับจากเมล็ดทานตะวัน บาร์เลย์</td>
-        </tr>
-    </table>
     </div>
   </div>
 
