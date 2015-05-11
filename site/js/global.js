@@ -82,6 +82,10 @@ function submenu(num) {
 		} else if(subFlg == 'none') {
 			$('.s_menu').eq(num).stop().slideDown(250);
 		}
+	} else {
+		if(num == 0) {
+			window.location="product.html";
+		}
 	}
 }
 // -------------------------------------------------------//
