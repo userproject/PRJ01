@@ -151,9 +151,17 @@
 	max-width:500px;
 }
 .contain4 .docinfo {
+	position:relative;
 	float:right;
 	width:33.26%;
 	padding:15px 0 0 0;	
+}
+.info_fade {
+	position:absolute;
+	width:100%
+}
+.info_fade a {
+	text-decoration:none;
 }
 .contain4 .docinfo .prfimg {
 	width:50.30%;
@@ -196,6 +204,7 @@
 		background-size: contain;
 	}
 	.contain1 {
+		margin:0;
 		padding:0 0 45px 0;	
 	}
 	.contain1 .prd_info {
