@@ -21,7 +21,7 @@ function setheader() {
 	
 	var btnsrc = $('.h_btn').find('img').attr('src');
 	
-	if($(window).width() > 790) {
+	if(document.documentElement.clientWidth > 790) {
 		$('.h_menu').show();
 		menuFlag = false;
 		

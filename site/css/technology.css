@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+	position:relative;
+	background:url(../images/technology/img/bg1.jpg) no-repeat #000 top center;
+	background-size:cover;
+}
+
+#technology {
+	position:relative;
+	max-width:980px;
+	width:100%;
+	margin:0 auto;
+	clear: both;
+	overflow:hidden;
+	padding-bottom:60px;
+	font-family: 'psl_kanda_probold';
+}
+
+.contain1 {
+	padding-top:30px;
+	color:#FFF;
+	text-align:center;
+}
+.contain1 .txt1 {
+	font-size:50px;
+	line-height:1.2em;
+}
+.contain1 .txt2 {
+	font-size:40px;
+	line-height:1.2em;
+}
+.contain1 .txt3 {
+	font-size:25px;
+	line-height:0.95em;
+}
+
+.contain2 {
+	background:url(../images/technology/img/bg2.png) no-repeat top left;
+	min-height:510px;
+	padding:130px 0 0 57.4%;
+	color:#FFF;
+}
+.contain2 .txt_ttl {
+	font-size:40px;
+	padding-bottom:10px;
+}
+.contain2 .txt1 {
+	font-size:25px;
+	padding-bottom:10px;
+}
+
+.contain3 {
+	color:#FFF;
+}
+.contain3 .txt1 {
+	float:left;
+	width:46.12%;
+	padding-top:35px;
+	margin:0 9.28% 0 4.69%;
+	text-align:right;
+}
+.contain3 .txt1 .ttl {
+	font-size:40px;
+	padding-bottom:10px;
+}
+.contain3 .txt1 .desc {
+	font-size:25px;
+}
+.contain3 .img1 {
+	float:left;
+	min-height:300px;
+	margin-top:-50px;
+}
+.contain3 .txt2 {
+	float:left;
+	width:38.88%;
+	padding-top:40px;
+	text-align:left;
+}
+.contain3 .txt2 .ttl {
+	font-size:40px;
+	padding-bottom:10px;
+}
+.contain3 .txt2 .desc {
+	font-size:25px;
+}
+.contain3 .img2 {
+	float:left;
+	min-height:300px;
+	margin: -13px 10.43% 0 11.26%;
+}
+.contain3 .txt3 {
+	float:left;
+	width:46.12%;
+	padding-top:45px;
+	margin: 0 6.39% 0 3%;
+	text-align:right;
+}
+.contain3 .txt3 .ttl {
+	font-size:40px;
+	padding-bottom:10px;
+}
+.contain3 .txt3 .desc {
+	font-size:25px;
+	padding-bottom:10px;
+}
+.contain3 .img3 {
+	float:left;
+	min-height:335px;
+	margin-top:-20px;
+}
+.contain3 .remark {
+	font-size:25px;
+	color:#666;	
+	padding-bottom:10px;
+}
+.contain3 .btn {
+	float:right;
+	width:286px;
+	height:38px;
+	margin:0;
+	line-height:38px;
+	background:#552021;
+	border-left:solid 2px #2E090A;
+	border-right:solid 2px #552021;
+	border-bottom:solid 2px #2E090A;
+}
+.contain3 .btn:hover {
+	background:#461112;
+	border-left:solid 2px #2C0909;
+	border-right:solid 2px #461112;
+	border-bottom:solid 2px #2C0909;
+}
+.contain3 .btn a {
+	display:block;
+	color:#FFF;
+	font-size:25px;
+	font-family: 'psl_kanda_probold';
+	text-decoration:none;
+	text-align:center;
+}
+
+@media screen and (max-width: 790px) {
+	
+	#content {
+		background:url(../images/technology/img/m-bg1.jpg) no-repeat #000 top center;
+		background-size:100% auto;
+	}
+	#technology {
+		padding-bottom:30px;	
+	}
+	
+	.contain1 .txt3 {
+		font-size: 23px;
+		line-height: 0.95em;
+		padding:0 1%;
+	}
+	.contain2 {
+		background:url(../images/technology/img/m-bg2.png) no-repeat top left;
+		background-size:contain;
+		min-height:0;
+		padding:0 5%;
+		color:#FFF;
+	}
+	.contain2 .txt_ttl {
+		font-size: 32px;
+	}
+	.contain2 .txt1 {
+		font-size: 23px;
+		padding-bottom: 10px;
+	}
+	
+	.contain3 .img1 {
+		float: none;
+		min-height: 0;
+		margin:20px auto;
+		width:70.625%;
+		min-width:225px;
+	}
+	.contain3 .txt1 {
+		float: none;
+		width: 90%;
+		padding-top: 0;
+		margin: 0 auto;
+		text-align: left;
+	}
+	.contain3 .txt1 .ttl {
+		font-size: 32px;
+		padding-bottom: 10px;
+	}
+	.contain3 .txt1 .desc {
+		font-size: 23px;
+	}
+	.contain3 .img2 {
+		float: none;
+		min-height: 0;
+		margin:20px auto;
+		width:70.625%;
+		min-width:225px;
+	}
+	.contain3 .txt2 {
+		float: none;
+		width: 90%;
+		padding-top: 0;
+		margin: 0 auto;
+	}
+	.contain3 .txt2 .ttl {
+		font-size: 32px;
+	}
+	.contain3 .txt2 .desc {
+		font-size: 23px;
+	}
+	.contain3 .txt3 {
+	  	float: none;
+		width: 100%;
+		padding-top: 0;
+		margin: 0 auto;
+		text-align: left;
+	}
+	.contain3 .blck_mb {
+		width:90%;
+		margin:0 auto;
+	}
+	.contain3 .img3 {
+		float: none;
+		min-height: 0;
+		margin:20px auto;
+		width:70.625%;
+		min-width:225px;
+	}
+	.contain3 .txt3 .ttl {
+		font-size: 32px;
+	}
+	.contain3 .txt3 .desc {
+		font-size: 23px;
+	}
+	.contain3 .remark {
+		font-size: 23px;
+	}
+	.contain3 .txt3 .btn {
+		float: none;
+		width: 286px;
+		height: 38px;
+		margin: 15px auto 0 auto;
+	}
+		
+}
