@@ -1,0 +1,117 @@
+/* CSS Document */
+body{
+	background:#000;
+}
+
+#content {
+	background:url(../images/product/img/bg.jpg) no-repeat #000 top center;
+	padding-bottom:50px;
+	overflow:hidden;
+}
+
+
+.howtoWrap{
+	width:100%;
+	max-width:990px;
+	margin:0 auto;
+}
+.phowtoGrp:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+.phowtoGrp{
+	padding-bottom:30px;
+}
+.phowto{
+	float:left;
+	width:33%;
+}
+.pgrp{
+	width:79%;
+	margin:0 auto;
+}
+.pdtl{
+	font-family: 'psl_kanda_probold';
+	color:#FFF;
+	text-align:center;
+}
+.pdtttl1{
+	padding-top:5px;
+	font-size:40px;
+	line-height:1em;
+}
+.pdtttl2{
+	font-size:30px;
+	line-height:1em;
+}
+.pdtttl3{
+	line-height:1em;
+	font-size:23px;
+	color:#D0AC66;
+}
+#provebtnDiv{
+	text-align:center;
+}
+#phowh1{
+	font-family: 'psl_kanda_probold';
+	text-align:center;
+	font-size:50px;
+	color:#FFF;
+	padding-top:30px;
+	padding-bottom:15px;
+}
+#phowh2{
+	font-family: 'psl_kanda_probold';
+	text-align:center;
+	font-size:40px;
+	color:#FFF;
+	padding-bottom:35px;
+}
+.pimg{
+	position:relative;
+}
+#numberfour{
+	top:60px;
+	left:-40px;
+	position:absolute;
+}
+@media screen and (max-width: 1030px) {
+#numberfour{
+	top:60px;
+	left:-10%;
+	position:absolute;
+	width:99%;
+}
+}
+
+@media screen and (max-width: 790px) {
+#numberfour{
+	top:70px;
+	left:-10%;
+	position:absolute;
+	width:100%;
+}
+#content{
+	padding-bottom:20px;
+	background:url(../images/product/img/bg-mb.jpg) no-repeat #000 top center;
+}
+.howtoWrap{
+	min-width:320px;
+	width:90%;
+	margin:0 auto;
+}
+.phowtoGrp:after{
+	clear:none;
+	content:'';
+	display:none;
+}
+.phowto{
+	float:none;
+	width:100%;
+	padding-bottom:20px;
+}
+
+
+
+}
