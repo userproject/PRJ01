@@ -11,8 +11,32 @@
 <link rel="stylesheet" type="text/css" href="css/aging-problem.css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/global.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'en'}
+</script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+window.twttr=(function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};
+  if(d.getElementById(id))return;
+  js=d.createElement(s);
+  js.id=id;
+  js.src="https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js,fjs);t._e=[];
+  t.ready=function(f){t._e.push(f);};
+  return t;
+}(document,"script","twitter-wjs"));
+</script>
+
 <!---------------------------------------------------------------->
 
 <div id="header">
@@ -26,8 +50,8 @@
         <div><a href="javascript:submenu(0);" class="cat_menu kanda_bold">ผลิตภัณฑ์</a></div>
         <div class="s_menu">
           <div class="s_con">
-            <div><a href="#" class="kanda_bold">ข้อมูลผลิตภัณฑ์</a></div>
-            <div><a href="#" class="kanda_bold">ขั้นตอนการใช้</a></div>
+            <div><a href="product.html" class="kanda_bold">ข้อมูลผลิตภัณฑ์</a></div>
+            <div><a href="how-to.html" class="kanda_bold">ขั้นตอนการใช้</a></div>
           </div>
         </div>
       </div>
@@ -37,7 +61,7 @@
         <div><a href="javascript:submenu(1);" class="cat_menu kanda_bold">ประสบการณ์ดีๆจากผู้ใช้จริง</a></div>
         <div class="s_menu">
           <div class="s_con">
-            <div><a href="#" class="kanda_bold">TESTIMONIAL</a></div>
+            <div><a href="testimonial.html" class="kanda_bold">TESTIMONIAL</a></div>
             <!--<div><a href="#" class="kanda_bold">REAL USERS</a></div>-->
           </div>
         </div>
@@ -104,7 +128,7 @@
               แต่เป็นเพราะเนื้อเยื่อที่รองรับถุงไขมันอยู่เกิดหย่อนยานลงตามกาลเวลา ในวัยที่เพิ่มขึ้น รวมไปถึงปัญหารอยหมองคล้ำใต้ตา 
               ริ้วรอยรอบดวงตา และตาลึก ผิวบริเวณรอบดวงตาจึงจำเป็นต้องได้รับการดูแลที่เหมาะสม เพราะเป็นส่วนที่บอบบาง 
               จึงต้องการผลิตภัณฑ์ที่ได้รับการออกแบบ เพื่อการดูแลผิวส่วนนี้โดยเฉพาะ </div>
-            <div class="btn1"><a href="#">ทำความรู้จักกับ LIFTING SOLUTIONS</a></div>
+            <div class="btn1"><a href="product.html">ทำความรู้จักกับ LIFTING SOLUTIONS</a></div>
           </div>
           <div class="clear"></div>
         </div>
@@ -122,7 +146,7 @@
       <div class="soc_blck">
         <div class="left" style="padding-left:10px;"> <a href="https://plus.google.com/share?url=www.youtube.com" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="images/share/img/g-plus-btn.png" alt="" /></a> </div>
-        <div class="left" style="padding-left:10px;"> <a href="www.youtube.com" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterdev"><!--Tweet--><img src="images/share/img/tw-btn.png" alt="" /></a> </div>
+        <div class="left" style="padding-left:10px;"> <a href="www.youtube.com" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterdev">Tweet</a> </div>
         <div class="left" style="padding-left:10px;"> <a href="#"><img src="images/share/img/fb-btn.png" alt="" /></a> 
           <!--use below when in use--> 
           <!--<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>--> 
@@ -136,5 +160,14 @@
 </div>
 
 <!---------------------------------------------------------------->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60916128-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

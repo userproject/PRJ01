@@ -116,35 +116,58 @@ function isIE () {
 }
 
 </script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'en'}
+</script>
 </head>
 <body onLoad="MM_preloadImages('images/product/btn/detail-ovr.png','images/product/btn/buy-ovr.png')">
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+window.twttr=(function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};
+  if(d.getElementById(id))return;
+  js=d.createElement(s);
+  js.id=id;
+  js.src="https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js,fjs);t._e=[];
+  t.ready=function(f){t._e.push(f);};
+  return t;
+}(document,"script","twitter-wjs"));
+</script>
 
 <!---------------------------------------------------------------->
 
 <div id="header">
   <div class="h_con">
-    <div class="h_logo"><img src="images/share/img/logo1.png" class="resize" alt="ARTISTRY FORWARD BEAUTY" /></div>
+    <div class="h_logo"><a href="index.html"><img src="images/share/img/logo1.png" class="resize" alt="ARTISTRY FORWARD BEAUTY" /></a></div>
     <div class="h_btn show_on_mb"><a href="javascript:headmenu();"><img src="images/share/img/h-menu-btn.png" class="resize" /></a></div>
     <div class="h_menu">
-      <div class="logo"><a href="" class="kanda_bold"><img src="images/share/img/hm-ico.png" class="resize Home" /><span>&nbsp;&nbsp;&nbsp;หน้าแรก</span></a></div>
-      <div class="menu"><a href="" class="kanda_bold">ปัญหาผิวมีอายุ</a></div>
-      <div class="menu sh_sub">
+      <div class="logo"><a href="index.html" class="kanda_bold"><img src="images/share/img/hm-ico.png" class="resize" class="Home" /><span>&nbsp;&nbsp;&nbsp;หน้าแรก</span></a></div>
+      <div id="aging_m" class="menu"><a href="aging-problem.html" class="kanda_bold">ปัญหาผิวมีอายุ</a></div>
+      <div id="product_m" class="menu sh_sub">
         <div><a href="javascript:submenu(0);" class="cat_menu kanda_bold">ผลิตภัณฑ์</a></div>
         <div class="s_menu">
           <div class="s_con">
-            <div><a href="" class="kanda_bold">ข้อมูลผลิตภัณฑ์</a></div>
-            <div><a href="" class="kanda_bold">ขั้นตอนการใช้</a></div>
+            <div><a href="product.html" class="kanda_bold">ข้อมูลผลิตภัณฑ์</a></div>
+            <div><a href="how-to.html" class="kanda_bold">ขั้นตอนการใช้</a></div>
           </div>
         </div>
       </div>
-      <div class="menu"><a href="" class="kanda_bold">เทคโนโลยี</a></div>
-      <div class="menu"><a href="" class="kanda_bold">ผลการทดลอง</a></div>
-      <div class="menu sh_sub">
+      <div id="tech_m" class="menu"><a href="technology.html" class="kanda_bold">เทคโนโลยี</a></div>
+      <div id="clinic_m" class="menu"><a href="clinical-proven.html" class="kanda_bold">ผลการทดลอง</a></div>
+      <div id="testimonial_m" class="menu sh_sub">
         <div><a href="javascript:submenu(1);" class="cat_menu kanda_bold">ประสบการณ์ดีๆจากผู้ใช้จริง</a></div>
         <div class="s_menu">
           <div class="s_con">
-            <div><a href="" class="kanda_bold">TESTIMONIAL</a></div>
-            <div><a href="" class="kanda_bold">REAL USERS</a></div>
+            <div><a href="testimonial.html" class="kanda_bold">TESTIMONIAL</a></div>
+            <!--<div><a href="#" class="kanda_bold">REAL USERS</a></div>-->
           </div>
         </div>
       </div>
@@ -158,7 +181,7 @@ function isIE () {
 
 <div id="content">
 <div class="productwrap detailwarp">
-	<div class="backBtn" ><img src="images/product/btn/back.png" width="41" height="15" alt="BACK"></div>
+	<div class="backBtn" ><a href="product.html"><img src="images/product/btn/back.png" width="41" height="15" alt="BACK"></a></div>
     <div class="backSlide" ><img src="images/product/btn/backslide.png" width="32" height="58" alt="Back" /></div>
     <div class="nextSlide" ><img src="images/product/btn/nextslide.png" width="32" height="58" alt="Next" /></div>
 </div>
@@ -456,7 +479,7 @@ function isIE () {
       <div class="soc_blck">
         <div class="left" style="padding-left:10px;"> <a href="https://plus.google.com/share?url=www.youtube.com" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="images/share/img/g-plus-btn.png" alt="" /></a> </div>
-        <div class="left" style="padding-left:10px;"> <a href="www.youtube.com" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterdev"><!--Tweet--><img src="images/share/img/tw-btn.png" alt="" /></a> </div>
+        <div class="left" style="padding-left:10px;"> <a href="www.youtube.com" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterdev">Tweet</a> </div>
         <div class="left" style="padding-left:10px;"> <a href="#"><img src="images/share/img/fb-btn.png" alt="" /></a> 
           <!--use below when in use--> 
           <!--<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>--> 
@@ -470,6 +493,14 @@ function isIE () {
 </div>
 
 <!---------------------------------------------------------------->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-60916128-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

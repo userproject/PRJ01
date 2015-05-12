@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+.contain1 .blck1 .cnt1 {
+	position:absolute;
+	margin-top:305px;
+	left:50%;	
+}
+.contain1 .blck1 .cnt2 {
+	position:absolute;
+	margin-top:85px;
+	left:64.5%;	
+}
+.contain1 .blck1 .cnt3 {
+	position:absolute;
+	margin-top:115px;
+	left:29%;	
+}
+.contain1 .blck1 .cnt4 {
+	position:absolute;
+	margin-top:130px;
+	left:68.5%;	
+}
+.contain1 .blck1 .cnt5 {
+	position:absolute;
+	margin-top:140px;
+	left:84.5%;	
+}
+.contain1 .blck1 .cnt6 {
+	position:absolute;
+	margin-top:100px;
+	left:9.5%;	
+}
+.contain1 .blck1 .cnt7 {
+	position:absolute;
+	margin-top:130px;
+	left:11.5%;	
+}
+
+.contain1 .blck1 .cnt1 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-130px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt2 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;
+	max-width:230px;
+	margin-left:-160px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt3 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-60px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt4 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-60px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt5 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-150px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt6 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-40px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt7 .desc {
+	position:relative;
+	background:none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/testimonial/img/bg2.png', sizingMethod='scale')";
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-75px;
+	z-index:5;
+}
+

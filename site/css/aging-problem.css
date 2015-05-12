@@ -162,12 +162,6 @@
 	text-decoration:none;
 	text-align:center;
 }
-@media screen and (max-width: 980px) {
-	#landing {
-		max-width:100%;
-		min-width:0;
-	}
-}
 
 @media screen and (max-width: 790px) {
 	.contain1 .txt_desc1 {

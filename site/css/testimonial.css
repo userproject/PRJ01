@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+	position:relative;
+	background:url(../images/testimonial/img/bg1.jpg) no-repeat #000 top center;
+	background-size:auto 100%;
+}
+#testimonial {
+	position:relative;
+	width:100%;
+	min-height:860px;
+	clear: both;
+	overflow:hidden;
+	padding-bottom:30px;
+	font-family: 'psl_kanda_probold';
+}
+
+.contain1 {
+	max-width:980px;
+	margin:0 auto;
+	padding-top:30px;
+	color:#FFF;
+	text-align:center;
+}
+.contain1 .txt1 {
+	font-size:50px;
+	line-height:1.2em;
+}
+.contain1 .txt2 {
+	font-size:40px;
+	line-height:1.2em;
+}
+.contain1 .txt3 {
+	width:59%;
+	margin:0 auto;
+	font-size:25px;
+	line-height:0.95em;
+}
+
+.contain1 .blck1 {
+	position:relative;
+	width:100%;	
+	height:600px;
+	text-align:left;
+}
+.contain1 .blck1 .cnt1 {
+	position:absolute;
+	margin-top:205px;
+	left:50%;	
+}
+.contain1 .blck1 .cnt2 {
+	position:absolute;
+	top:85px;
+	left:62.5%;	
+}
+.contain1 .blck1 .cnt3 {
+	position:absolute;
+	top:155px;
+	left:31%;	
+}
+.contain1 .blck1 .cnt4 {
+	position:absolute;
+	top:250px;
+	left:64.5%;	
+}
+.contain1 .blck1 .cnt5 {
+	position:absolute;
+	top:160px;
+	left:77.5%;	
+}
+.contain1 .blck1 .cnt6 {
+	position:absolute;
+	top:100px;
+	left:17.5%;	
+}
+.contain1 .blck1 .cnt7 {
+	position:absolute;
+	top:280px;
+	left:18.5%;	
+}
+
+.contain1 .blck1 .btn {
+	display:block;
+	cursor:pointer;
+}
+
+.contain1 .blck1 .cnt1 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-130px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt2 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;
+	max-width:230px;
+	margin-left:-160px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt3 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-60px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt4 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-60px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt5 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-150px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt6 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-40px;
+	z-index:5;
+}
+.contain1 .blck1 .cnt7 .desc {
+	position:relative;
+	background:url(../images/testimonial/img/bg2.png) no-repeat top center;
+	background-size:100% 100%;
+	padding:22px 10px 13px 10px;	
+	max-width:230px;
+	margin-left:-75px;
+	z-index:5;
+}
+.contain1 .blck1 .desc {
+	display:none;
+}
+
+.contain1 .blck1 a {
+	color:#FFF;
+	text-decoration:none;
+}
+.contain1 .blck1 .name, .contain1 .blck1 .pos, .contain1 .blck1 .go_dtl {
+	font-size:25px;
+	line-height:0.95em;
+	text-align:center;
+}
+.contain1 .blck1 .go_dtl {
+	padding-top:10px;
+	color:#D0AC66;
+}
+
+@media screen and (max-width: 980px) {
+	.contain1 .blck1 .cnt5 {
+		position: absolute;
+		top: 160px;
+		left: 85.5%;
+	}
+	.contain1 .blck1 .cnt6 {
+		position:absolute;
+		top:100px;
+		left:5%;	
+	}
+}
+
+@media screen and (max-width: 790px) {
+	
+	#content {
+		background:url(../images/testimonial/img/m-bg1.jpg) no-repeat #000 top center;
+		background-size:cover;
+	}
+	
+	#testimonial {
+		padding-bottom:0px;
+	}
+
+	
+	.contain1 .txt1 {
+		font-size:40px;
+		line-height:1.2em;
+	}
+	.contain1 .txt2 {
+		font-size:30px;
+		line-height:1.2em;
+	}
+	.contain1 .txt3 {
+		width:90%;
+		margin:0 auto;
+		font-size:23px;
+		line-height:0.95em;
+	}
+	
+	.contain1 .blck1 {
+		position: relative;
+		height: auto;
+		text-align: left;
+		padding-top:25px;
+	}
+	
+	.contain1 .blck1 .btn {
+		display:none;
+	}
+	
+	.contain1 .blck1 .cnt1 {
+		position:static;
+		margin:0;
+	}
+	.contain1 .blck1 .cnt2 {
+		position:static;	
+		margin:0;
+	}
+	.contain1 .blck1 .cnt3 {
+		position:static;
+		margin:0;
+	}
+	.contain1 .blck1 .cnt4 {
+		position:static;
+		margin:0;
+	}
+	.contain1 .blck1 .cnt5 {
+		position:static;
+		margin:0;
+	}
+	.contain1 .blck1 .cnt6 {
+		position:static;
+		margin:0;
+	}
+	.contain1 .blck1 .cnt7 {
+		position:static;
+		margin:0;
+	}
+
+	.contain1 .blck1 .cnt1 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;	
+		width:80%;
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt2 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;		
+		width:80%;
+		max-width:90%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt3 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;		
+		width:80%;
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt4 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;	
+		width:80%;	
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt5 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;	
+		width:80%;	
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt6 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;		
+		width:80%;
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .cnt7 .desc {
+		background:url(../images/testimonial/img/m-bg2.jpg) no-repeat top center;
+		background-size:100% 100%;
+		padding:22px 5% 13px 5%;		
+		width:80%;
+		max-width:100%;
+		margin:0 auto 15px auto;
+	}
+	.contain1 .blck1 .desc {
+		display:block;
+	}
+
+	.contain1 .blck1 .prf_img {
+		width:90%;
+		margin:0 auto;
+		line-height:0;
+	}
+	
+}
