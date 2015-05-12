@@ -28,13 +28,15 @@ body{
 	width:33%;
 }
 .pgrp{
-	width:79%;
+	width:100%;
 	margin:0 auto;
 }
 .pdtl{
 	font-family: 'psl_kanda_probold';
 	color:#FFF;
 	text-align:center;
+	width:90%;
+	margin:0 auto;
 }
 .pdtttl1{
 	padding-top:5px;
@@ -70,6 +72,8 @@ body{
 }
 .pimg{
 	position:relative;
+	width:79%;
+	margin:0 auto;
 }
 #numberfour{
 	top:60px;
