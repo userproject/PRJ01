@@ -105,13 +105,26 @@
 }
 
 .contain3 {
+	position:relative;
 	background:url(../images/againg-problem/img/bg2.jpg) no-repeat top center;
+	filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/againg-problem/img/bg2.jpg', sizingMethod='scale')";
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/againg-problem/img/bg2.jpg', sizingMethod='scale')";
 	background-size:cover;
 	padding:110px 0 100px 0;
+	overflow:hidden;
+}
+.contain3 .face {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
 }
 .contain3 .con_wrap {
+	position:relative;
+	z-index:3;
+	float:right;
 	max-width:906px;
-	margin:0 auto;
+	margin:0 20% 0 0;
 }
 .contain3 .blck1 {
 	background:url(../images/againg-problem/img/bg3.png) no-repeat top center;
@@ -161,6 +174,46 @@
 	font-family: 'psl_kanda_probold';
 	text-decoration:none;
 	text-align:center;
+}
+
+@media screen and (max-width: 1600px) {
+	.contain3 .con_wrap {
+		position:relative;
+		z-index:3;
+		float:right;
+		max-width:906px;
+		margin:0 10% 0 0;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.contain3 {
+		padding:30px 0 20px 0;
+	}
+	.contain3 .con_wrap {
+		margin:0 5% 0 0;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.contain3 .con_wrap {
+		margin:0 1% 0 0;
+	}
+	.contain3 .blck1 {
+		width: 60%;
+		margin: 0 0 0 0;
+	}
+	.contain3 .blck1 .txt1 {
+		font-size: 30px;
+	}
+	.contain3 .blck1 .sp_txt {
+		font-size:38px;
+	}
+	
+	.contain3 .blck2 {
+		  float: right;
+		  width: 64%;
+	}
 }
 
 @media screen and (max-width: 790px) {

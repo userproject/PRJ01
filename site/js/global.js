@@ -32,6 +32,7 @@ function setheader() {
 		}
 	} else {
 		$('.h_menu').hide();
+		$('#header').css({'height':'auto'});
 		menuFlag = false
 		
 		if(btnsrc.indexOf('../') >= 0) {
@@ -41,6 +42,7 @@ function setheader() {
 		}
 	} 	
 	
+	$('.s_menu').slideUp(250);
 	var catcount = $('.sh_sub').length;
 	for(var i = 0; i < catcount; i++) {
 		var offset_L = $('.sh_sub').eq(i).offset().left;
@@ -85,6 +87,8 @@ function submenu(num) {
 	} else {
 		if(num == 0) {
 			window.location="product.html";
+		} else if (num == 1) {
+			window.location="testimonial.html";
 		}
 	}
 }
@@ -115,6 +119,7 @@ function matchmedia(){
 // -------------------------------------------------------//
 
 $(document).ready(function(e) {
+	
 	matchmedia();
 	
 	setTimeout(function() {
@@ -140,6 +145,15 @@ $(document).ready(function(e) {
 		}
 	);	
 	
+	$('.logo').hover(function() {
+			if(window.location.href.indexOf('index.html') < 0 && matchpc) {
+				$(this).find('img').attr('src', $(this).find('img').attr('src').replace('.png', '-ovr.png'));
+			}
+		}, function() {
+			if(window.location.href.indexOf('index.html') < 0 && matchpc) {
+				$(this).find('img').attr('src', $(this).find('img').attr('src').replace('-ovr.png', '.png'));
+			}
+	});
 	
 });
 
