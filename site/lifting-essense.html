@@ -12,106 +12,114 @@
 <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.carousel.css"/>
 <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.theme.css"/>
 <script src="js/jquery-1.9.1.js"></script>
-<script src="js/global.js"></script>
 <script src="js/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/global.js"></script>
 <script type="text/javascript">
-function MM_swapImgRestore() { //v3.0
-  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-}
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
 
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
-
-function MM_swapImage() { //v3.0
-  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-}
 
 var owl;
 var oldie = false;
 var isie = false;
 $(document).ready(function() {
-	owl =$('#owl-product');
-	if(isIE()){
-		isie = true;
-		if(isIE()<=8){
-			oldie = true;
-		}
-	}
- 
+    
+  owl =$('#owl-product');
+  if(isIE()){
+    isie = true;
+    if(isIE()<=8){
+      oldie = true;
+    }
+  }
 });
 
 $(window).load(function(){
-initOwl();
+  //var spch = 0;
+  initOwl();
 
-	if(window.location.hash) {
-		var hashtxt = window.location.hash.replace('#','');
-		if(hashtxt=="lifting-eye"){
-			owl.trigger('to.owl.carousel', 0);
-		}else if(hashtxt=="lifting-essense"){
-			owl.trigger('to.owl.carousel', 1);
-		}else if(hashtxt=="lifting-cream"){
-			owl.trigger('to.owl.carousel', 2);
-		}
-	}
-
+  $(".backSlide").click(function () {
+    owl.trigger('prev.owl.carousel');
+  });
   
-	$(".backSlide").click(function () {
-		owl.trigger('prev.owl.carousel');
-	});
-	
-	$(".nextSlide").click(function () {
-		owl.trigger('next.owl.carousel');
-	});
+  $(".nextSlide").click(function () {
+    owl.trigger('next.owl.carousel');
+  });
+  
+  
 });
 
-$(window).resize(function(){
-	reowl();
+$(window).resize(function(){  
+  reowl();
 });
 
 function initOwl(){
-	 	owl.owlCarousel({
+    owl.owlCarousel({
       navigation : false, // Show next and prev buttons
       items:1,
-	  center:true,
-	  pagination:false,
-	  smartSpeed:850,
-	  autoHeight:true,
-	  loop:true,
-	  startPosition:1
-	});
+    center:true,
+    pagination:false,
+    smartSpeed:850,
+    autoHeight:true,
+    loop:true,
+    responsive: false,
+    startPosition:1
+  });
 }
 
-
+var timer
 function reowl(){
+  if(!isie){
+       if(timer!=null){
+         clearTimeout(timer);
+       }
+       timer = setTimeout(function(){
+      var container = $("#owl-product");
+      if (container.hasClass("owl-carousel")) {
+        try{
+        container.owlCarousel({
+        touchDrag: false,
+        mouseDrag: false
+        });
+        container.data('owlCarousel').destroy();
+        container.removeClass('owl-carousel owl-loaded');
+        container.find('.owl-stage-outer').children().unwrap();
+        container.removeData();
+        initOwl();
+        }catch(ex){
+        }
+      }
+    },200);
 
-	if(!isie){
-		var container = $("#owl-product");
-		
-		if (container.hasClass("owl-carousel")) {
-			container.owlCarousel({
-			touchDrag: false,
-			mouseDrag: false
-			});
-			container.data('owlCarousel').destroy();
-			container.removeClass('owl-carousel owl-loaded');
-			container.find('.owl-stage-outer').children().unwrap();
-			container.removeData();
-			initOwl();
-		
-		}
-	}	
+  } 
+}
 
+function backtop(){
+   $("html, body").animate({scrollTop: 0}, 1000);
+}
+
+function headmenu() {
+  var btnsrc = $('.h_btn').find('img').attr('src');
+  
+  if(menuFlag) {
+    if(btnsrc.indexOf('../') >= 0) {
+      $('.h_btn').find('img').attr('src', '../images/share/img/h-menu-btn.png');
+    } else {
+      $('.h_btn').find('img').attr('src', 'images/share/img/h-menu-btn.png');
+    }
+    
+    $('.h_menu').slideUp(500);
+    setTimeout(function(){$("#content").css({"visibility":"visible"});},500);
+    menuFlag = false;
+  } else {
+    $("#content").css({"visibility":"hidden"});
+    if(btnsrc.indexOf('../') >= 0) {
+      $('.h_btn').find('img').attr('src', '../images/share/img/h-x-btn.png');
+    } else {
+      $('.h_btn').find('img').attr('src', 'images/share/img/h-x-btn.png');
+    }
+    
+    $('.h_menu').slideDown(500);
+    
+    menuFlag = true;
+  }
 }
 
 function isIE () {
@@ -121,7 +129,7 @@ function isIE () {
 
 </script>
 </head>
-<body onLoad="MM_preloadImages('images/product/btn/detail-ovr.png','images/product/btn/buy-ovr.png')">
+<body>
 
 <!---------------------------------------------------------------->
 
@@ -162,7 +170,7 @@ function isIE () {
 
 <div id="content">
 <div class="productwrap detailwarp">
-	<div class="backBtn" ><a href="product.html"><img src="images/product/btn/back.png" width="41" height="15" alt="BACK"></a></div>
+  <div class="backBtn" ><a href="product.html"><img src="images/product/btn/back.png" width="41" height="15" alt="BACK"></a></div>
     <div class="backSlide" ><img src="images/product/btn/backslide.png" width="32" height="58" alt="Back" /></div>
     <div class="nextSlide" ><img src="images/product/btn/nextslide.png" width="32" height="58" alt="Next" /></div>
 </div>
@@ -189,10 +197,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ก่อนใช้ เขย่าขวดเบาๆ แล้วหมุนเปิดฝา กดปุ่มด้านบนฝา เพื่อดูดผลิตภัณฑ์ขึ้นมาตามหลอด จากนั้น ค่อยๆ กดเพื่อหยดผลิตภัณฑ์ลงบนปลายนิ้ว ไม่ควรหยดผลิตภัณฑ์ ลงบนบริเวณผิวรอบดวงตาโดยตรง ใช้ปลายนิ้วเกลี่ยผลิตภัณฑ์เบาๆ บริเวณรอบดวงตาตามด้วยอาร์ทิสทรี ยูธ เอ็กซ์เทนด์ เอ็นริชชิ่ง อาย ครีม ใช้เป็นประจำทั้งตอนเช้าและก่อนนอน</div>
         <div class="productIndetail">
-          <table>
-              <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7018</td>
+          <table class="productIndetailTb"  >
+              <tr >
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7018</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -207,95 +215,95 @@ function isIE () {
             <td class="inRightside">2,450 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P683 B1960</td>
+            <td class="inLeftside lastprdtb">P683 B1960</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn1','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn1"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>
     <div class="befHead kanda_bold ">ลักษณะเด่นและคุณประโยชน์</div>
     <!--<div class="befTab kanda_bold" >
-    	<div class="befDiv bgc1 befLeft">ลักษณะเด่น</div><div class="befDiv bgc1 befRight">คุณประโชน์</div>
+      <div class="befDiv bgc1 befLeft">ลักษณะเด่น</div><div class="befDiv bgc1 befRight">คุณประโชน์</div>
         <div class="befDiv bgc2 befLeft">อุดมด้วยสารสกัดเข้มข้นจาก เรด คาเวียร์ที่ได้รับการจดสิทธิบัตรแล้ว พร้อมส่วนผสมจากเทคโนโลยีก้าวล้ำที่ให้คุณประโยชน์หลากหลาย</div><div class="befDiv bgc2 befRight">ขจัดเซลล์ผิวที่เสื่อมสภาพเพื่อลดเลือนริ้วรอยช่วยเสริมสร้างผิวชั้นบนสุดของโครงสร้างจุลภาคให้ดูกระชับขึ้นอย่างรู้สึกได้</div>
         <div class="befDiv bgc3 befLeft">ไมโคร เอ็กซ์ 6 เปปไทด์ สูตรเฉพาะของอาร์ทิสทรี</div><div class="befDiv bgc3 befRight">ช่วยลดเลือนริ้วรอยและร่องลึก</div>
         <div class="befDiv bgc2 befLeft">ส่วนผสมที่ช่วยกระชับผิวในระดับจุลภาค ได้แก่เมล็ดทานตะวัน, บาร์เลย์ และสารสกัดจากแตงกวา</div><div class="befDiv bgc2 befRight">ช่วยเสริมให้เกิดการสะสมของลิพิดตามธรรมชาติในผิวหนัง จึงช่วยรองรับและปกป้องผิวหน้าในระดับจุลภาพชั้นบนสุด เพื่อใบหน้าที่ได้รูปมากขึ้น</div>
     </div>-->
     <div class="befTableMb kanda_bold">
     <table>
-    	<tr>
-        	<td style="width:30%" class="mbbg1">ลักษณะเด่น</td>
+      <tr>
+          <td style="width:30%" class="mbbg1">ลักษณะเด่น</td>
             <td class="mbbg3">อุดมด้วยสารสกัดเข้มข้นจาก เรดคาเวียร์ ที่ได้รับการจดสิทธิบัตรแล้วพร้อมส่วนผสมจากเทคโนโลยีก้าวล้ำที่ให้คุณประโยชน์หลากหลาย</td>
         </tr>
         <tr>
-        	<td class="mbbg2">คุณประโยชน์</td>
+          <td class="mbbg2">คุณประโยชน์</td>
             <td class="mbbg3">ขจัดเซลล์ผิวที่เสื่อมสภาพเพื่อลดเลือนริ้วรอย ช่วยเสริมสร้างผิวชั้นบนสุดของโครงสร้างจุลภาคให้ดูกระชับขึ้นอย่างรู้สึกได้</td>
         </tr>
         <tr>
-        	<td class="mbbg1">ลักษณะเด่น</td>
+          <td class="mbbg1">ลักษณะเด่น</td>
             <td class="mbbg3">ไมโคร เอ็กซ์ 6 เปปไทด์ สูตรเฉพาะของอาร์ทิสทรี</td>
         </tr>
         <tr>
-        	<td class="mbbg2">คุณประโยชน์</td>
+          <td class="mbbg2">คุณประโยชน์</td>
             <td class="mbbg3">ช่วยลดเลือนริ้วรอยและร่องลึก</td>
         </tr>
         <tr>
-        	<td class="mbbg1" >ลักษณะเด่น</td>
+          <td class="mbbg1" >ลักษณะเด่น</td>
             <td class="mbbg3">ส่วนผสมที่ช่วยกระชับผิวในระดับจุลภาค ได้แก่ เมล็ดทานตะวัน, บาร์เลย์และสารสกัดจากแตงกวา</td>
         </tr>
         <tr>
-        	<td class="mbbg2" >คุณประโยชน์</td>
+          <td class="mbbg2" >คุณประโยชน์</td>
             <td class="mbbg3">ช่วยเสริมให้เกิดการสะสมของลิพิดตามธรรมชาติในผิวหนัง จึงช่วยรองรับและปกป้องผิวหน้าในระดับจุลภาพชั้นบนสุด เพื่อใบหน้าที่ได้รูปมากขึ้น</td>
         </tr>
     </table>
     </div>
     
     <div class="befTable kanda_bold hide_on_mb" >
-    	<table>
-        	<tr class="tdbg1">
-            	<td >ลักษณะเด่น</td>
+      <table>
+          <tr class="tdbg1">
+              <td >ลักษณะเด่น</td>
                 <td>คุณประโชน์</td>
             </tr>
             <tr class="tdbg2">
-            	<td>อุดมด้วยสารสกัดเข้มข้นจาก เรด คาเวียร์ที่ได้รับการจดสิทธิบัตรแล้ว พร้อมส่วนผสมจากเทคโนโลยีก้าวล้ำที่ให้คุณประโยชน์หลากหลาย</td>
+              <td>อุดมด้วยสารสกัดเข้มข้นจาก เรด คาเวียร์ที่ได้รับการจดสิทธิบัตรแล้ว พร้อมส่วนผสมจากเทคโนโลยีก้าวล้ำที่ให้คุณประโยชน์หลากหลาย</td>
                 <td>ขจัดเซลล์ผิวที่เสื่อมสภาพเพื่อลดเลือนริ้วรอยช่วยเสริมสร้างผิวชั้นบนสุดของโครงสร้างจุลภาคให้ดูกระชับขึ้นอย่างรู้สึกได้</td>
             </tr>
             <tr class="tdbg3">
-            	<td>ไมโคร เอ็กซ์ 6 เปปไทด์ สูตรเฉพาะของอาร์ทิสทรี</td>
+              <td>ไมโคร เอ็กซ์ 6 เปปไทด์ สูตรเฉพาะของอาร์ทิสทรี</td>
                 <td>ช่วยลดเลือนริ้วรอยและร่องลึก</td>
             </tr>
             <tr class="tdbg2">
-            	<td>ส่วนผสมที่ช่วยกระชับผิวในระดับจุลภาค ได้แก่เมล็ดทานตะวัน, บาร์เลย์ และสารสกัดจากแตงกวา</td>
+              <td>ส่วนผสมที่ช่วยกระชับผิวในระดับจุลภาค ได้แก่เมล็ดทานตะวัน, บาร์เลย์ และสารสกัดจากแตงกวา</td>
                 <td>ช่วยเสริมให้เกิดการสะสมของลิพิดตามธรรมชาติในผิวหนัง จึงช่วยรองรับและปกป้องผิวหน้าในระดับจุลภาพชั้นบนสุด เพื่อใบหน้าที่ได้รูปมากขึ้น</td>
             </tr>
         </table>
     </div>
     <div class="befHead kanda_bold">ส่วนผสมทางประสิทธิภาพ</div>
     <div class="befTable befItem kanda_bold hide_on_mb">
-    	<table>
-        	<tr class="tdbg1">
-            	<td width="190" >ปัญหา</td>
+      <table>
+          <tr class="tdbg1">
+              <td width="190" >ปัญหา</td>
                 <td>สาเหตุ</td>
                 <td>เทคโนโลยี</td>
             </tr>
             <tr class="tdbg2">
-            	<td>ถุงใต้ตาหย่อนคล้อย</td>
+              <td>ถุงใต้ตาหย่อนคล้อย</td>
                 <td>เนื้อเยื่อที่รองรับถุงไขมันอยู่เกิดหย่อนยานลงตามกาลเวลา ในวัยที่เพิ่มขึ้น</td>
                 <td><ul><li>สารสกัดเข้มข้นจากเรด คาเวียร</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
             </tr>
             <tr class="tdbg2">
-            	<td>รอยหมองคล้ำใต้ตา</td>
+              <td>รอยหมองคล้ำใต้ตา</td>
                 <td>อาการตาแห้ง รวมทั้งแพ้สารเคมีต่างๆทำให้คันจนต้องถูขยี้ตา</td>
                 <td><ul><li>สารสกัดจากผลซิลเวอร์ไวน</li><li>โสมวินเทอร์เชอร์รรี่</li><li>มอยส์เจอไรเซอร์</li></ul></td>
             </tr>
             <tr class="tdbg2">
-            	<td>ริ้วรอยรอบดวงตา</td>
+              <td>ริ้วรอยรอบดวงตา</td>
                 <td>การเสื่อมของเนื้อเยื่อเกี่ยวพันใต้ผิวหนังพวกคอลลาเจน และอิลาสติน</td>
                 <td><ul><li>สารสกัดเข้มข้นจากเรด คาเวียร์</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
             </tr>
              <tr class="tdbg2">
-            	<td>ตาลึก</td>
+              <td>ตาลึก</td>
                 <td>เกิดจากผิวหนังและไขมันใต้ชั้นกล้ามเนื้อตาที่บางลงทำให้ ร่องนี้เด่นชัดขึ้น</td>
                 <td>ส่วนผสมอนุภาคขนาดเล็กที่ช่วยเรื่องความกระชับจากเมล็ดทานตะวัน บาร์เลย์</td>
             </tr>
@@ -303,52 +311,52 @@ function isIE () {
     </div>
     <div class="befTableMb beflast kanda_bold">
     <table>
-    	<tr>
-        	<td style="width:30%" class="mbbg1">ปัญหา</td>
+      <tr>
+          <td style="width:30%" class="mbbg1">ปัญหา</td>
             <td class="mbbg4">ถุงใต้ตาหย่อนคล้อย</td>
         </tr>
         <tr>
-        	<td class="mbbg2">สาเหตุ</td>
+          <td class="mbbg2">สาเหตุ</td>
             <td class="mbbg4">เนื้อเยื่อที่รองรับถุงไขมันอยู่เกิดหย่อนยานลงตามกาลเวลาในวัยที่เพิ่มขึ้น</td>
         </tr>
         <tr>
-        	<td class="mbbg3">เทคโนโลยี</td>
+          <td class="mbbg3">เทคโนโลยี</td>
             <td class="mbbg4"><ul><li>สารสกัดเข้มข้นจากเรด คาเวียร์</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
         </tr>
         <tr>
-        	<td class="mbbg1">ปัญหา</td>
+          <td class="mbbg1">ปัญหา</td>
             <td class="mbbg4">รอยหมองคล้ำใต้ตา</td>
         </tr>
         <tr>
-        	<td class="mbbg2" >สาเหตุ</td>
+          <td class="mbbg2" >สาเหตุ</td>
             <td class="mbbg4">อาการตาแห้ง รวมทั้งแพ้สารเคมีต่างๆทำให้คันจนต้องถูขยี้ตา</td>
         </tr>
         <tr>
-        	<td class="mbbg3" >เทคโนโลยี</td>
+          <td class="mbbg3" >เทคโนโลยี</td>
             <td class="mbbg4"><ul><li>สารสกัดจากผลซิลเวอร์ไวน์</li><li>โสมวินเทอร์เชอร์รี่</li><li>มอยส์เจอไรเซอร์</li></ul></td>
         </tr>
         <tr>
-        	<td class="mbbg1" >ปัญหา</td>
+          <td class="mbbg1" >ปัญหา</td>
             <td class="mbbg4">ริ้วรอยรอบดวงตา</td>
         </tr>
         <tr>
-        	<td class="mbbg2" >สาเหตุ</td>
+          <td class="mbbg2" >สาเหตุ</td>
             <td class="mbbg4">การเสื่อมของเนื้อเยื่อเกี่ยวพันใต้ผิวหนัง พวกคอลลาเจน และอิลาสติน</td>
         </tr>
        <tr>
-        	<td class="mbbg3" >เทคโนโลยี</td>
+          <td class="mbbg3" >เทคโนโลยี</td>
             <td class="mbbg4"><ul><li>สารสกัดเข้มข้นจากเรด คาเวียร์</li><li>ไมโคร - เอ็กซ์ 6 เปปไทด์</li></ul></td>
         </tr>
         <tr>
-        	<td class="mbbg1" >ปัญหา</td>
+          <td class="mbbg1" >ปัญหา</td>
             <td class="mbbg4">ตาลึก</td>
         </tr>
         <tr>
-        	<td class="mbbg2" >สาเหตุ</td>
+          <td class="mbbg2" >สาเหตุ</td>
             <td class="mbbg4">เกิดจากผิวหนังและไขมันใต้ชั้นกล้ามเนื้อตา ที่บางลงทำให้ ร่องนี้เด่นชัดขึ้น</td>
         </tr>
         <tr>
-        	<td class="mbbg3" >เทคโนโลยี</td>
+          <td class="mbbg3" >เทคโนโลยี</td>
             <td class="mbbg4">ส่วนผสมอนุภาคขนาดเล็กที่ช่วยเรื่องความกระชับจากเมล็ดทานตะวัน บาร์เลย์</td>
         </tr>
     </table>
@@ -375,10 +383,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ปั๊มผลิตภัณฑ์ 1 - 2 ครั้ง ลงบนปลายนิ้ว ลูบไล้ให้ทั่วใบหน้าและลำคอในแนววนขึ้น</div>
         <div class="productIndetail">
-          <table>
+          <table class="productIndetailTb">
               <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7014</td>
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7014</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -393,11 +401,11 @@ function isIE () {
             <td class="inRightside">3,270 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P911 B2616</td>
+            <td class="inLeftside lastprdtb">P911 B2616</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn2','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn2"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>
@@ -422,10 +430,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ใช้ปลายนิ้วเกลี่ยผลิตภัณฑ์ในแนววนขึ้น ให้ทั่วใบหน้า และลำคอใช้ทั้งตอนเช้าและก่อนนอน</div>
         <div class="productIndetail">
-          <table>
+          <table class="productIndetailTb">
               <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7016</td>
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7016</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -440,11 +448,11 @@ function isIE () {
             <td class="inRightside">3,995 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P1102 B3163</td>
+            <td class="inLeftside lastprdtb">P1102 B3163</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn3','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn3"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>

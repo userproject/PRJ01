@@ -14,32 +14,8 @@
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/owl-carousel/owl.carousel.min.js"></script>
 <script src="js/global.js"></script>
-<!--[if gt IE 8]>
 <script type="text/javascript">
 
-<![endif]-->
-<script type="text/javascript">
-function MM_swapImgRestore() { //v3.0
-  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-}
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
-
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
-
-function MM_swapImage() { //v3.0
-  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-}
 
 var owl;
 var oldie = false;
@@ -84,35 +60,68 @@ function initOwl(){
 	  pagination:false,
 	  smartSpeed:850,
 	  autoHeight:true,
-	  loop:true
+	  loop:true,
+	  responsive: false
 	});
 }
 
+var timer
 function reowl(){
-
 	if(!isie){
-		var container = $("#owl-product");
-		
-		if (container.hasClass("owl-carousel")) {
-			container.owlCarousel({
-			touchDrag: false,
-			mouseDrag: false
-			});
-			container.data('owlCarousel').destroy();
-			container.removeClass('owl-carousel owl-loaded');
-			container.find('.owl-stage-outer').children().unwrap();
-			container.removeData();
-			initOwl();
-		
-		}
-	}	
+		   if(timer!=null){
+			   clearTimeout(timer);
+		   }
+		   timer = setTimeout(function(){
+			var container = $("#owl-product");
+			if (container.hasClass("owl-carousel")) {
+				try{
+				container.owlCarousel({
+				touchDrag: false,
+				mouseDrag: false
+				});
+				container.data('owlCarousel').destroy();
+				container.removeClass('owl-carousel owl-loaded');
+				container.find('.owl-stage-outer').children().unwrap();
+				container.removeData();
+				initOwl();
+				}catch(ex){
+				}
+			}
+		},200);
 
+	}	
 }
 
 function backtop(){
 	 $("html, body").animate({scrollTop: 0}, 1000);
 }
 
+function headmenu() {
+	var btnsrc = $('.h_btn').find('img').attr('src');
+	
+	if(menuFlag) {
+		if(btnsrc.indexOf('../') >= 0) {
+			$('.h_btn').find('img').attr('src', '../images/share/img/h-menu-btn.png');
+		} else {
+			$('.h_btn').find('img').attr('src', 'images/share/img/h-menu-btn.png');
+		}
+		
+		$('.h_menu').slideUp(500);
+		setTimeout(function(){$("#content").css({"visibility":"visible"});},500);
+		menuFlag = false;
+	} else {
+		$("#content").css({"visibility":"hidden"});
+		if(btnsrc.indexOf('../') >= 0) {
+			$('.h_btn').find('img').attr('src', '../images/share/img/h-x-btn.png');
+		} else {
+			$('.h_btn').find('img').attr('src', 'images/share/img/h-x-btn.png');
+		}
+		
+		$('.h_menu').slideDown(500);
+		
+		menuFlag = true;
+	}
+}
 
 function isIE () {
   var myNav = navigator.userAgent.toLowerCase();
@@ -121,7 +130,7 @@ function isIE () {
 
 </script>
 </head>
-<body onLoad="MM_preloadImages('images/product/btn/detail-ovr.png','images/product/btn/buy-ovr.png')">
+<body>
 
 <!---------------------------------------------------------------->
 
@@ -189,10 +198,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ก่อนใช้ เขย่าขวดเบาๆ แล้วหมุนเปิดฝา กดปุ่มด้านบนฝา เพื่อดูดผลิตภัณฑ์ขึ้นมาตามหลอด จากนั้น ค่อยๆ กดเพื่อหยดผลิตภัณฑ์ลงบนปลายนิ้ว ไม่ควรหยดผลิตภัณฑ์ ลงบนบริเวณผิวรอบดวงตาโดยตรง ใช้ปลายนิ้วเกลี่ยผลิตภัณฑ์เบาๆ บริเวณรอบดวงตาตามด้วยอาร์ทิสทรี ยูธ เอ็กซ์เทนด์ เอ็นริชชิ่ง อาย ครีม ใช้เป็นประจำทั้งตอนเช้าและก่อนนอน</div>
         <div class="productIndetail">
-          <table>
-              <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7018</td>
+          <table class="productIndetailTb"  >
+              <tr >
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7018</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -207,11 +216,11 @@ function isIE () {
             <td class="inRightside">2,450 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P683 B1960</td>
+            <td class="inLeftside lastprdtb">P683 B1960</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn1','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn1"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>
@@ -375,10 +384,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ปั๊มผลิตภัณฑ์ 1 - 2 ครั้ง ลงบนปลายนิ้ว ลูบไล้ให้ทั่วใบหน้าและลำคอในแนววนขึ้น</div>
         <div class="productIndetail">
-          <table>
+          <table class="productIndetailTb">
               <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7014</td>
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7014</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -393,11 +402,11 @@ function isIE () {
             <td class="inRightside">3,270 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P911 B2616</td>
+            <td class="inLeftside lastprdtb">P911 B2616</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn2','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn2"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>
@@ -422,10 +431,10 @@ function isIE () {
         <div class="productSubttl">วิธีใช้ผลิตภัณฑ์</div>
         <div class="productSubdtl">ใช้ปลายนิ้วเกลี่ยผลิตภัณฑ์ในแนววนขึ้น ให้ทั่วใบหน้า และลำคอใช้ทั้งตอนเช้าและก่อนนอน</div>
         <div class="productIndetail">
-          <table>
+          <table class="productIndetailTb">
               <tr>
-            <td class="inLeftside">รหัส:</td>
-            <td class="inRightside">11-7016</td>
+            <td class="inLeftside firstprdtb">รหัส:</td>
+            <td class="inRightside firstprdtb">11-7016</td>
               </tr>
               <tr>
             <td class="inLeftside">ขนาด:</td>
@@ -440,11 +449,11 @@ function isIE () {
             <td class="inRightside">3,995 บาท</td>
               </tr>
               <tr>
-            <td class="inLeftside">P1102 B3163</td>
+            <td class="inLeftside lastprdtb">P1102 B3163</td>
             <td></td>
               </tr>
           </table>
-          <div class="buyBtnDiv" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('buyBtn3','','images/product/btn/buy-ovr.png',1)"><img src="images/product/btn/buy.png" alt="สั่งซื้อสินค้าออนไลน์" width="250" height="50" id="buyBtn3"></a></div>
+          <div class="buyBtnDiv" ><a href="#" class="buybtn" ></a></div>
         </div>
       </div>
     </div>
