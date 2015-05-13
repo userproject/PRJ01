@@ -247,10 +247,14 @@ body{
 }
 
 @media all and (max-width: 790px) {
+.backBtn{
+	padding-top:20px;
+}
 	
 #content{
 	padding-bottom:20px;
 	background:url(../images/product/img/bg-mb.jpg) no-repeat #000 top center;
+	background-size:100%;
 }
 .productwrap{
 	width:86%;
@@ -300,6 +304,8 @@ body{
 .productTxt{
 	min-height:100%;
 	padding-bottom:15px;
+	width:80%;
+	margin:0 auto;
 }
 
 /*--------------------- detail ---------------------*/
@@ -355,7 +361,7 @@ body{
 	display:block;
 }
 .befTableMb td{
-	padding:15px 0;
+	padding:15px 5%;
 	
 }
 .befTableMb ul{
@@ -371,17 +377,25 @@ body{
 	padding:15px 5%;
 }
 .mbbg1{
-	background:url(../images/product/img/bg1.png) repeat;
+	background:url(../images/product/img/mbbg1.png) repeat;
 	color:#D0AC66;
 	text-align:center;
 }
 .mbbg2{
-	background:url(../images/product/img/bg3.png) repeat;
+	background:url(../images/product/img/mbbg2.png) repeat;
 	text-align:center;
 	color:#D0AC66;
 }
 .mbbg3{
-	background:url(../images/product/img/bg2.png) repeat;
+	background:url(../images/product/img/mbbg3.png) repeat;
+}
+.beflast .mbbg3{
+	text-align:center;
+	color:#D0AC66;
+}
+.mbbg4{
+	background:url(../images/product/img/mbbg4.png) repeat;
+	
 }
 .befTableMb table th, .befTableMb table td {
     border:black solid 1px;
