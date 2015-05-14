@@ -154,6 +154,7 @@
 	position:relative;
 	float:right;
 	width:45.26%;
+	min-height:320px;
 	padding:15px 0 0 0;	
 }
 .info_fade {
