@@ -57,6 +57,18 @@ $(window).resize(function(){
 });
 
 function initOwl(){
+  if(oldie){
+    owl.owlCarousel({
+      navigation : false, // Show next and prev buttons
+      items:1,
+    center:true,
+    pagination:false,
+    smartSpeed:850,
+    autoHeight:true,
+    loop:true,
+    startPosition:1
+  });
+  }else{
     owl.owlCarousel({
       navigation : false, // Show next and prev buttons
       items:1,
@@ -68,6 +80,7 @@ function initOwl(){
     responsive: false,
     startPosition:1
   });
+  }
 }
 
 var timer

@@ -287,15 +287,15 @@ body{
 .itemcenter{
 	margin:0 25px 0 25px;
 }
+}
+
+@media all and (max-width: 790px) {
 .backSlide{
 	left:0%;
 }
 .nextSlide{
 	right:0%;
 }
-}
-
-@media all and (max-width: 790px) {
 .backBtn{
 	padding-top:20px;
 }

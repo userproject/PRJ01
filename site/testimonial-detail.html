@@ -67,7 +67,7 @@ var owl;
 var pos = 0;
 function initOwl(){
 	pos = window.location.search.substring(5);
-	
+	if(!oldie) {
     owl.owlCarousel({
 		navigation : false, // Show next and prev buttons
 		items:1,
@@ -79,6 +79,18 @@ function initOwl(){
 		responsive: false,
 		startPosition:pos
 	});
+  }else{
+    owl.owlCarousel({
+    navigation : false, // Show next and prev buttons
+    items:1,
+    center:true,
+    pagination:false,
+    smartSpeed:850,
+    autoHeight:true,
+    loop:true,
+    startPosition:pos
+  });
+  }
 }
 
 var timer;
