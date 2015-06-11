@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+	position: relative;
+	background: url(../images/clinical-proven/img/bg1.jpg) no-repeat #000 top center;
+	background-size: cover;
+}
+#real_usr {
+	position: relative;
+	width: 100%;
+	clear: both;
+	overflow: hidden;
+	padding-bottom: 30px;
+	font-family: 'psl_kanda_probold';
+}
+#real_usr .contain1 {
+	padding-top: 30px;
+	text-align: center;
+	color: #FFF;
+}
+#real_usr .contain1 .con_wrap {
+	max-width: 980px;
+	margin: 0 auto;
+}
+#real_usr .contain1 .ttl {
+	font-size: 50px;
+	line-height: 1.2em;
+}
+#real_usr .contain1 .txt_ttl1 {
+	font-size: 40px;
+	line-height: 1.4em;
+}
+#real_usr .contain1 .txt_desc1 {
+	max-width: 440px;
+	margin: 0 auto;
+	font-size: 25px;
+	line-height: 1em;
+}
+#real_usr .contain2 {
+	max-width:990px;
+	margin:0 auto;
+	padding:50px 0 30px 0;
+}
+#real_usr .contain2 .blck_itm1 {
+	float:left;
+	width:32%;
+	margin:0 1.75% 18px 0;
+	line-height:0;
+}
+#real_usr .contain2 .blck_itm2 {
+	float:left;
+	width:32%;
+	line-height:0;
+}
+#real_usr .contain2 .blck_itm1 a, .contain2 .blck_itm2 a {
+	text-decoration:none;	
+}
+#real_usr .contain2 .sht_txt {
+	background:url(../images/real-user/img/bg-desc.jpg) no-repeat top left;
+	background-size:100% 100%;
+	height:99px;
+	padding:13px 7.5%;
+	text-align:center;
+	color: #FFF;
+	overflow:hidden;
+}
+#real_usr .contain2 .sht_txt .name {
+	font-size:25px;
+	line-height:0.95;
+	padding-bottom:3px;
+}
+#real_usr .contain2 .sht_txt .txt {
+	font-size:22px;
+	line-height:0.95;
+}
+#real_usr .contain2 .sht_txt .rdmr {
+	color:#D0AD66;
+	font-size:25px;
+	line-height:30px;
+}
+
+#real_usr .paging table {
+	height:30px;
+	max-width:240px;
+}
+.paging table td {
+	width:12.5%;
+	font-size:25px;
+	color:#D0AC66;
+	vertical-align:middle;	
+}
+.paging table td a {
+	font-size:25px;
+	color:#D0AC66;
+	text-decoration:none;
+	line-height:30px;
+}
+.paging table td.active a {
+	color:#FFF;
+}
+	
+@media screen and (max-width: 790px) {
+	#content {
+		background:url(../images/clinical-proven/img/m-bg1.jpg) no-repeat #000 top center;
+		background-size:100% auto;
+	}
+	
+	#real_usr .contain1 .txt_ttl1 {
+		font-size: 40px;
+		line-height: 1em;
+		padding:0 2.5%;
+	}
+	#real_usr .contain1 .txt_desc1 {
+		padding:0 5%;
+	}
+	#real_usr .contain2 .blck_itm1 {
+		float:none;
+		width:90%;
+		margin:0 auto 18px auto;
+		line-height:0;
+	}
+	#real_usr .contain2 .blck_itm2 {
+		float:none;
+		width:90%;
+		margin:0 auto;
+		line-height:0;
+	}
+}
+
+#real_usr_detail {
+	position: relative;
+	max-width: 990px;
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	overflow: hidden;
+	padding-bottom: 70px;
+	font-family: 'psl_kanda_probold';
+}
+#real_usr_detail .back_btn {
+	padding-top: 50px;
+}
+#real_usr_detail .nextBtn {
+	position: absolute;
+	top: 250px;
+	right: 5px;
+	cursor: pointer;
+	z-index: 5;
+}
+#real_usr_detail .prevBtn {
+	position: absolute;
+	top: 250px;
+	left: 5px;
+	cursor: pointer;
+	z-index: 5;
+}
+#real_usr_detail .girl_img {
+	max-width: 500px;
+	margin: 0 auto 25px auto;
+}
+#real_usr_detail .contain2 {
+	color: #FFF;
+	text-align: left;
+	padding: 0 7.5%;
+}
+#real_usr_detail .txt_name {
+	font-size: 50px;
+	line-height: 1.2em;
+}
+#real_usr_detail .txt_sht {
+	font-size: 30px;
+	line-height: 1.2em;
+}
+#real_usr_detail .txt_desc {
+	font-size: 22px
+}
+ @media screen and (max-width: 990px) {
+	#real_usr_detail .back_btn {
+		padding: 50px 0 0 10px;
+	}
+}
+ @media screen and (max-width: 790px) {
+#real_usr_detail .back_btn {
+	padding: 50px 0 0 5%;
+}
+#real_usr_detail .nextBtn {
+	position: absolute;
+	top: 250px;
+	right: 15px;
+	cursor: pointer;
+	z-index: 5;
+}
+#real_usr_detail .prevBtn {
+	position: absolute;
+	top: 250px;
+	left: 15px;
+	cursor: pointer;
+	z-index: 5;
+}
+#real_usr_detail .girl_img {
+	max-width: 75%;
+	margin: 0 auto 25px auto;
+}
+}
